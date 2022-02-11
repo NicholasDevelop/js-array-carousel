@@ -21,7 +21,6 @@ section{
 }
 
 .main-item{
-    display: none;
     height: 70vh;
     width: 65vw;
 }
@@ -37,21 +36,9 @@ section{
     text-align: right;
 }
 
-.title, .subtitle{
-    display: none;
-}
-
-.title.active, .subtitle.active{
-    display: block;
-}
-
 .slide-wrapper .item{
     height: calc( 70vh / 5 );
     width: 15vw;
-}
-
-section .item.active, .main-item.active{
-    display: block;
 }
 
 .item img, .main-item img{

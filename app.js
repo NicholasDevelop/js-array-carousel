@@ -27,7 +27,10 @@ const slideWrapper = document.querySelector('.slide-wrapper');
 slideWrapper.innerHTML = '';
 const mainItem = document.querySelector('.main-item');
 const photoTitle = document.querySelector('.title');
-const photoDescription = document.querySelector('.description');
+const photoDescription = document.querySelector('.subtitle');
+const mainItemImg = document.querySelector('.main-item > img');
+
+
 
 let currentIndex = 0;
 
@@ -53,12 +56,20 @@ images[currentIndex].classList.add('active');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+
 prev.addEventListener('click', function(){
     if( currentIndex > 0 ){
         images[currentIndex].classList.remove('active');
         currentIndex--;
         images[currentIndex].classList.add('active');
+    }else{
+        images[currentIndex].classList.remove('active');
+        currentIndex = items.length - 1;
+        images[currentIndex].classList.add('active');
     }
+    mainItemImg.src = items[currentIndex];
+    photoTitle.innerHTML = title[currentIndex];
+    photoDescription.innerHTML = text[currentIndex];
 })
 
 next.addEventListener('click', function(){
@@ -66,5 +77,12 @@ next.addEventListener('click', function(){
         images[currentIndex].classList.remove('active');
         currentIndex++;
         images[currentIndex].classList.add('active');
+    }else{
+        images[currentIndex].classList.remove('active');
+        currentIndex = 0;
+        images[currentIndex].classList.add('active');
     }
+    mainItemImg.src = items[currentIndex];
+    photoTitle.innerHTML = title[currentIndex];
+    photoDescription.innerHTML = text[currentIndex];
 })
