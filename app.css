@@ -14,20 +14,19 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
-.slider, .main{
+.main-item{
     position: relative;
 }
 
-section .main.item{
+.main-item{
     display: none;
-    height: 80vh;
-    width: 60vw;
+    height: 70vh;
+    width: 65vw;
 }
 
-.main .photo-description{
+.photo-description{
     position: absolute;
     color: white;
     bottom: 30px;
@@ -38,31 +37,52 @@ section .main.item{
     text-align: right;
 }
 
-.slide-wrapper .item{
+.title, .subtitle{
     display: none;
-    height: 20%;
-    width: 20vw;
 }
 
-section .item.active, .slide-wrapper .item.active{
+.title.active, .subtitle.active{
     display: block;
 }
 
-.item img{
+.slide-wrapper .item{
+    height: calc( 70vh / 5 );
+    width: 15vw;
+}
+
+section .item.active, .main-item.active{
+    display: block;
+}
+
+.item img, .main-item img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
+.slider{
+    position: relative;
+}
+
+.slider .item{
+    opacity: 0.5;
+}
+
+.slider .item.active, .slider .item:hover{
+    opacity: 1;
+}
+
+.slider .item.active{
+    border: 3px solid rgba(255, 255, 255, 0.418);
+}
+
 .arrows{
     display: flex;
     justify-content: center;
-    align-content: space-between;
     font-size: 30px;
     font-weight: 700;
     width: 100%;
-    padding: 15px;
     user-select: none;
 }
 
