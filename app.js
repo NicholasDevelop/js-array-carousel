@@ -25,8 +25,9 @@ const text = [
 
 const slideWrapper = document.querySelector('.slide-wrapper');
 slideWrapper.innerHTML = '';
-
-
+const mainItem = document.querySelector('.main-item');
+const photoTitle = document.querySelector('.title');
+const photoDescription = document.querySelector('.description');
 
 let currentIndex = 0;
 
@@ -38,11 +39,7 @@ for( let i = 0; i < items.length; i++){
 
     image.src = items[i];
 
-    if(i == 0){
-        divElement.classList.add('active');
-        currentIndex = 0;
-    }
-
+    
     slideWrapper.append(divElement);
     divElement.append(image);
 
